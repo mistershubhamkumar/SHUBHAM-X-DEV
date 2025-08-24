@@ -1,0 +1,23 @@
+Plugin Name
+About this plugin...
+https://hidden-url.com/plugin1
+
+Another Plugin
+Adds animation effects
+https://hidden-url.com/plugin2
+
+Plugin Name
+About this plugin...
+https://hidden-url.com/plugin1
+
+Another Plugin
+Adds animation effects
+https://hidden-url.com/plugin2
+
+Plugin Name
+About this plugin...
+https://hidden-url.com/plugin1
+
+Another Plugin
+Adds animation effects
+https://hidden-url.com/plugin2
