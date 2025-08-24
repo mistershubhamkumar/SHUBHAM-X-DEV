@@ -152,3 +152,56 @@ async function buildSettingsFromJSON() {
 document.addEventListener('DOMContentLoaded', () => {
   buildSettingsFromTxt();
 });
+// Load plugins from plugins.txt
+async function buildPluginsFromTxt() {
+  const container = document.getElementById('plugin-container');
+  if (!container) return;
+
+  try {
+    const resp = await fetch('plugins.txt', { cache: 'no-store' });
+    if (!resp.ok) throw new Error('plugins.txt not found');
+    const raw = await resp.text();
+
+    const blocks = raw
+      .split(/\r?\n\r?\n+/)
+      .map(b => b.trim())
+      .filter(Boolean);
+
+    container.innerHTML = '';
+
+    blocks.forEach((block, i) => {
+      const lines = block.split(/\r?\n/);
+      const name = lines[0] || 'Unnamed Plugin';
+      const about = lines[1] || 'No description';
+      const url = lines[2] || '#';
+
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.setAttribute('data-aos', 'fade-up');
+
+      const h3 = document.createElement('h3');
+      h3.textContent = name;
+
+      const p = document.createElement('p');
+      p.textContent = `About: ${about}`;
+
+      const btn = document.createElement('button');
+      btn.textContent = 'Copy URL';
+      btn.addEventListener('click', () => copyText(url));
+
+      card.appendChild(h3);
+      card.appendChild(p);
+      card.appendChild(btn);
+
+      container.appendChild(card);
+    });
+  } catch (e) {
+    console.error(e);
+    container.innerHTML = '<p class="error">Could not load plugins.txt</p>';
+  }
+}
+
+// Auto-run on Plugins page
+document.addEventListener('DOMContentLoaded', () => {
+  buildPluginsFromTxt();
+});
