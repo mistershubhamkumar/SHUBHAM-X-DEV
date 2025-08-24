@@ -1,0 +1,139 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(-45deg, #ff6a00, #ee0979, #00c9ff, #92fe9d);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #333;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Header */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #222;
+  color: white;
+  padding: 10px 20px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.favicon {
+  width: 24px;
+  margin-right: 10px;
+}
+
+.badge {
+  width: 16px;
+  margin-left: 5px;
+}
+
+.right .profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Home Page Buttons */
+.grid-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 40px;
+}
+
+a {
+  background: linear-gradient(to right, #ff6a00, #ee0979);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+a:active {
+  transform: scale(0.95);
+}
+
+/* Cards */
+.card {
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-header {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-bottom: 8px;
+  color: #007bff;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Banner Page */
+.image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  padding: 20px;
+}
+
+.image-grid img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.image-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Multi-line Paragraph in Settings */
+.multi-text {
+  background: #f8f8f8;
+  padding: 10px;
+  border-radius: 6px;
+  white-space: pre-wrap; /* preserves line breaks */
+  text-align: left;
+  font-family: inherit;
+  font-size: 1em;
+  margin-bottom: 10px;
+}
